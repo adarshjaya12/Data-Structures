@@ -5,23 +5,22 @@ using System.Text;
 namespace Datastructures.Linked_List
 {
 
-    public class Nodes
+    public class DoubleLinkedList
     {
-        public Nodes NextValue;
-        public int value;
-    }
+        public class DoubleNodes
+        {
+            public DoubleNodes NextValue;
+            public DoubleNodes PreviousValue;
+            public int value;
+        }
 
-
-    public enum Position { BEGIN,MIDDLE,END}
-
-    public class LinkedList
-    {
-        public Nodes Head;
+        public DoubleNodes Head;
+        public DoubleNodes Tail;
         int listCount;
 
         public void AddItem(int insertValue,Position position,int index = 0)
         {
-            Nodes node = new Nodes();
+            DoubleNodes node = new DoubleNodes();
             node.value = insertValue;
             AddtoList(node, position, index);
         }
@@ -30,33 +29,37 @@ namespace Datastructures.Linked_List
         {
             RemoveFromList(position, index);
         }
-        private void AddtoList(Nodes item, Position addPosition,int index)
+        private void AddtoList(DoubleNodes item, Position addPosition,int index)
         {
             if(Head == null)
             {
                 Head = item;
+                Tail = item;
                 listCount = 1;
             }
             else
             {
-                Nodes tailNode = null;
                 if (addPosition == Position.END)
                 {
-                    for (Nodes node = Head; node != null; node = node.NextValue)
+                    DoubleNodes previousNode = null;
+                    for (DoubleNodes node = Head; node != null; node = node.NextValue)
                     {
                         if(node.NextValue == null)
                         {
+                            item.PreviousValue = node;
                             node.NextValue = item;
+                            Tail = item;
                             listCount++;
+
                         }
                     }
                 }
                 else if(addPosition == Position.BEGIN)
                 {
                     var oldHeadItem = Head;
-                    var newHead = item;
-                    newHead.NextValue = oldHeadItem;
-                    Head = newHead;
+                    oldHeadItem.PreviousValue = item;
+                    item.NextValue = oldHeadItem;
+                    Head = item;
                     listCount++;
                 }
                 else if(addPosition == Position.MIDDLE)
@@ -64,13 +67,17 @@ namespace Datastructures.Linked_List
                      if(index <= listCount)
                     {
                         int counter = 0;
-                        Nodes current = Head;
+                        DoubleNodes current = Head;
                         while (current != null)
                         {
                             if(counter + 1 == index)
                             {
                                 var movingNode = current.NextValue;
+                                movingNode.PreviousValue = item;
+
+                                item.PreviousValue = current;
                                 item.NextValue = movingNode;
+
                                 current.NextValue = item;
                                 break;
                             }
@@ -92,15 +99,17 @@ namespace Datastructures.Linked_List
             if(removePosition == Position.BEGIN)
             {
                 var nextItemAfterHead = Head.NextValue;
+                nextItemAfterHead.PreviousValue = null;
                 Head = nextItemAfterHead;
                 listCount--;
             }
             else if(removePosition == Position.END)
             {
-                for (Nodes node = Head; node != null; node = node.NextValue)
+                for (DoubleNodes node = Head; node != null; node = node.NextValue)
                 {
                     if (node.NextValue.NextValue == null)
                     {
+                        Tail = node;
                         node.NextValue = null;
                         listCount--;
                         break;
@@ -112,13 +121,14 @@ namespace Datastructures.Linked_List
                 if (index <= listCount)
                 {
                     int counter = 0;
-                    Nodes current = Head;
+                    DoubleNodes current = Head;
                     while (current != null)
                     {
                         if (counter + 1 == index)
                         {
                             var movingNode = current.NextValue.NextValue;
                             current.NextValue = movingNode;
+                            movingNode.PreviousValue = current;
                             break;
                         }
                         current = current.NextValue;
@@ -135,12 +145,23 @@ namespace Datastructures.Linked_List
 
         public void PrintAllList()
         {
-            Nodes current= Head;
-            Console.WriteLine("PRINT THE LIST");
+            DoubleNodes current = Head;
+            Console.WriteLine("PRINT ALL DOUBLE LINKED LIST");
             while(current != null)
             {
                 Console.WriteLine(current.value);
                 current = current.NextValue;
+            }
+        }
+
+        public void PrintAllReverse()
+        {
+            DoubleNodes current = Tail;
+            Console.WriteLine("PRINT ALL DOUBLE LINKED LIST IN REVERSE");
+            while (current != null)
+            {
+                Console.WriteLine(current.value);
+                current = current.PreviousValue;
             }
         }
     }
