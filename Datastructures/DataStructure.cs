@@ -1,4 +1,5 @@
 ﻿using Datastructures.Linked_List;
+using Datastructures.Stack;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +8,7 @@ namespace Datastructures
 {
     class DataStructure
     {
-
+        #region LinkedList
         public static void TestSingleLinkedList()
         {
             LinkedList list = new LinkedList();
@@ -65,10 +66,31 @@ namespace Datastructures
 
             Console.ReadLine();
         }
+        #endregion
+
+        #region Stack
+        
+        public static void TestStack()
+        {
+            Stacks<int> newStack = new Stacks<int>();
+            newStack.Push(10);
+            newStack.Push(7);
+            newStack.Push(2);
+            newStack.Push(6);
+            newStack.PrintAllItems();
+            newStack.Pop();
+            newStack.Pop();
+            newStack.PrintAllItems();
+            Console.ReadLine();
+        }
+
+        #endregion
+
         public static void Main(string[] args)
         {
             //TestSingleLinkedList();
-            TestDoubleLinkedList();
+            //TestDoubleLinkedList();
+            TestStack();
         }
     }
 }

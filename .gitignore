@@ -1,3 +1,6 @@
-\.vs
-\Datastructures\bin\
-\Datastructures\obj\
+.vs
+Datastructures/bin/
+Datastructures/obj/
+.dll
+.pdb
+.cache
