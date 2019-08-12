@@ -84,13 +84,30 @@ namespace Datastructures
             Console.ReadLine();
         }
 
+        public static void LinkedListStack()
+        {
+            LinkedListStack<int> linkedListStack = new LinkedListStack<int>();
+            linkedListStack.Push(10);
+            linkedListStack.Push(9);
+            linkedListStack.Push(8);
+            linkedListStack.Push(7);
+            linkedListStack.Push(6);
+            linkedListStack.Push(5);
+            linkedListStack.PrintAll();
+            linkedListStack.Pop();
+            linkedListStack.Pop();
+            linkedListStack.PrintAll();
+            Console.Read();
+        }
+
         #endregion
 
         public static void Main(string[] args)
         {
             //TestSingleLinkedList();
             //TestDoubleLinkedList();
-            TestStack();
+            //TestStack();
+            LinkedListStack();
         }
     }
 }
