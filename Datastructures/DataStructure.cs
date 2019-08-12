@@ -78,8 +78,8 @@ namespace Datastructures
             newStack.Push(2);
             newStack.Push(6);
             newStack.PrintAllItems();
-            newStack.Pop();
-            newStack.Pop();
+            newStack.Push(1);
+            newStack.Push(2);
             newStack.PrintAllItems();
             Console.ReadLine();
         }
