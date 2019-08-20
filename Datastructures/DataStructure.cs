@@ -1,4 +1,5 @@
 ﻿using Datastructures.Linked_List;
+using Datastructures.Queue;
 using Datastructures.Stack;
 using System;
 using System.Collections.Generic;
@@ -102,12 +103,30 @@ namespace Datastructures
 
         #endregion
 
+        #region Queue
+        public static void TestArrayQueue()
+        {
+            ArrayQueue<int> arrayQueue = new ArrayQueue<int>();
+            arrayQueue.Enqueue(1);
+            arrayQueue.Enqueue(2);
+            arrayQueue.Enqueue(3);
+            arrayQueue.Enqueue(5);
+            arrayQueue.Enqueue(7);
+            arrayQueue.PrintAllInQueue();
+            arrayQueue.Dequeue();
+            arrayQueue.Dequeue();
+            arrayQueue.PrintAllInQueue();
+            Console.ReadLine();
+        }
+        #endregion
+
         public static void Main(string[] args)
         {
             //TestSingleLinkedList();
             //TestDoubleLinkedList();
             //TestStack();
-            LinkedListStack();
+            //LinkedListStack();
+            TestArrayQueue();
         }
     }
 }
