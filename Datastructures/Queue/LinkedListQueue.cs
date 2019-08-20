@@ -19,6 +19,8 @@ namespace Datastructures.Queue
         {
             if(Front == null)
             {
+                Front = new TNodes<T>();
+                Back = new TNodes<T>();
                 Front.value = item;
                 Back = Front;
             }
@@ -33,7 +35,33 @@ namespace Datastructures.Queue
 
         public void Dequeue()
         {
+            if(Front != null && Front.NextNode != null)
+            {
+                var removingItem = Front;
+                Front = removingItem.NextNode;
+            }
+            else
+            {
+                Console.WriteLine("No more item to remove");
+            }
+           
+        }
 
+
+        public void PrintItems()
+        {
+            var loopItem = Front;
+            Console.WriteLine("Printing Queue \n\n");
+            while(loopItem != null)
+            {
+                Console.Write(loopItem.value);
+                loopItem = loopItem.NextNode;
+            }
+            Console.WriteLine("\nEnd");
+        }
+        public bool IsEmpty()
+        {
+            return Front == null;
         }
 
     }

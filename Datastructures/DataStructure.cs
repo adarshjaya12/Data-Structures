@@ -118,6 +118,23 @@ namespace Datastructures
             arrayQueue.PrintAllInQueue();
             Console.ReadLine();
         }
+
+
+        public static void TestLinkedListQueue()
+        {
+            LinkedListQueue<int> linkedListQueue = new LinkedListQueue<int>();
+            linkedListQueue.Enqueue(3);
+            linkedListQueue.Enqueue(4);
+            linkedListQueue.Enqueue(5);
+            linkedListQueue.Enqueue(6);
+            linkedListQueue.Enqueue(7);
+            linkedListQueue.Enqueue(8);
+            linkedListQueue.PrintItems();
+            linkedListQueue.Dequeue();
+            linkedListQueue.Dequeue();
+            linkedListQueue.PrintItems();
+            Console.ReadLine();
+        }
         #endregion
 
         public static void Main(string[] args)
@@ -126,7 +143,8 @@ namespace Datastructures
             //TestDoubleLinkedList();
             //TestStack();
             //LinkedListStack();
-            TestArrayQueue();
+            //TestArrayQueue();
+            TestLinkedListQueue();
         }
     }
 }

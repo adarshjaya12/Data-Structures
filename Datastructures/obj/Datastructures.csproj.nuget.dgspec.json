@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ajayakumar\\source\\repos\\Datastructures\\Datastructures\\Datastructures.csproj": {}
+    "C:\\Users\\adars\\Desktop\\Data-Structures\\Datastructures\\Datastructures.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ajayakumar\\source\\repos\\Datastructures\\Datastructures\\Datastructures.csproj": {
+    "C:\\Users\\adars\\Desktop\\Data-Structures\\Datastructures\\Datastructures.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ajayakumar\\source\\repos\\Datastructures\\Datastructures\\Datastructures.csproj",
+        "projectUniqueName": "C:\\Users\\adars\\Desktop\\Data-Structures\\Datastructures\\Datastructures.csproj",
         "projectName": "Datastructures",
-        "projectPath": "C:\\Users\\ajayakumar\\source\\repos\\Datastructures\\Datastructures\\Datastructures.csproj",
-        "packagesPath": "C:\\Users\\ajayakumar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ajayakumar\\source\\repos\\Datastructures\\Datastructures\\obj\\",
+        "projectPath": "C:\\Users\\adars\\Desktop\\Data-Structures\\Datastructures\\Datastructures.csproj",
+        "packagesPath": "C:\\Users\\adars\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adars\\Desktop\\Data-Structures\\Datastructures\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ajayakumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adars\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,10 +25,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.episerver.com/feed/packages.svc/": {},
-          "http://nuget.sitefinity.com/nuget": {},
-          "http://proget.adagetech.net/nuget/Adage/": {},
-          "https://adagetech.myget.org/F/adage/auth/305ddd88-9f74-40e1-abf7-670bc9ff5b2c/api/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
