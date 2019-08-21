@@ -1,4 +1,5 @@
-﻿using Datastructures.Linked_List;
+﻿using Datastructures.HashTable;
+using Datastructures.Linked_List;
 using Datastructures.Queue;
 using Datastructures.Stack;
 using System;
@@ -137,6 +138,29 @@ namespace Datastructures
         }
         #endregion
 
+        #region Hash Table
+        public static void TestHashTable()
+        {
+            HashTable<string, int> hashTable = new HashTable<string, int>(30);
+            hashTable.Add("Adarsh", 0545);
+            hashTable.Add("Rhul", 3122);
+            hashTable.Add("Cory", 8112);
+            hashTable.Add("Dan", 2200);
+            hashTable.Add("Janos", 3658);
+            hashTable.Add("Tata", 1124);
+            hashTable.Add("Brila", 2245);
+            hashTable.Add("MS", 4411);
+            hashTable.Add("Apple", 1213);
+            hashTable.PrintAllHash();
+            hashTable.Remove("Dan");
+            hashTable.Remove("Janos");
+            Console.WriteLine("########################");
+            Console.WriteLine("Printing after removing");
+            hashTable.PrintAllHash();
+            Console.ReadLine();
+        }
+        #endregion
+
         public static void Main(string[] args)
         {
             //TestSingleLinkedList();
@@ -144,7 +168,8 @@ namespace Datastructures
             //TestStack();
             //LinkedListStack();
             //TestArrayQueue();
-            TestLinkedListQueue();
+            //TestLinkedListQueue();
+            TestHashTable();
         }
     }
 }
